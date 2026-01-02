@@ -10,12 +10,7 @@ void print_arr(int *arr, int size)
 }
 int main()
 {
-    int arr[6] = {31,
-                  41,
-                  59,
-                  41,
-                  26,
-                  58};
+    int arr[6] = {31, 41, 59, 41, 26, 58};
 
     print_arr(arr, 6);
     for (int j = 1; j < 6; j++)
@@ -23,10 +18,10 @@ int main()
         int key = arr[j];
         int i = j - 1;
 
-        while (arr[i] > key)
+        while (i >= 0 && arr[i] < key)
         {
             arr[i + 1] = arr[i];
-            --i;
+            i--;
         }
         arr[i + 1] = key;
     }
